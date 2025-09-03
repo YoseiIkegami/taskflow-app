@@ -1,6 +1,9 @@
-# TaskFlow - Modern Task Management App
+# TaskFlow - Task Management App
 
 A modern, full-stack task management application built as a portfolio project for software engineering independence. This project demonstrates proficiency in modern web development technologies and best practices.
+
+<img width="1436" height="962" alt="image" src="https://github.com/user-attachments/assets/683f5f42-d5e2-493c-8d3b-2d41f286434b" />
+
 
 ## 🌟 Features
 
@@ -172,7 +175,12 @@ This is a portfolio project, but suggestions and improvements are welcome!
 
 ## 📸 Screenshots
 
-*Screenshots will be added after deployment*
+<img width="1436" height="962" alt="image" src="https://github.com/user-attachments/assets/3e5bdd7b-9646-4b75-aa43-372e27f6a3a8" />
+
+<img width="1437" height="961" alt="image" src="https://github.com/user-attachments/assets/c8305041-5ba7-4668-9d3e-763092f08d2a" />
+
+
+
 
 ---
 
