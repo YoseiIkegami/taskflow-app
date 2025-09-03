@@ -1,6 +1,4 @@
 # Project specific
-backend/
-frontend/
 
 # OS
 .DS_Store
