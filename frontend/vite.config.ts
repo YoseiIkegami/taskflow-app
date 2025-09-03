@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/taskflow-app/",
+  base: "/task-management-app/",
   esbuild: {
     loader: "jsx",
     include: /src\/.*\.[jt]sx?$/,
