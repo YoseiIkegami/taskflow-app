@@ -103,7 +103,7 @@ cd frontend && npm run dev
 - [x] API Integration
 - [x] CORS Configuration
 - [x] Demo Mode (No Authentication)
-- [ ] Basic Deployment
+- [x] Basic Deployment (GitHub Pages)
 
 ## 🔮 Future Enhancements
 
@@ -132,6 +132,7 @@ This project is designed with internationalization in mind:
 - **Phase 4**: Clean UI/UX implementation
 - **Phase 5**: CORS configuration and API integration
 - **Phase 6**: Demo mode implementation (no authentication required)
+- **Phase 7**: GitHub Pages deployment with GitHub Actions
 
 ## 🚀 Deployment
 
@@ -140,13 +141,39 @@ This project is designed with internationalization in mind:
 - Frontend: Vite dev server (`npm run dev`)
 - Database: SQLite (local development)
 
-### Production (Planned)
-- Backend: Railway/Heroku
-- Frontend: Vercel/Netlify
-- Database: PlanetScale/MySQL
+### Production
+- **Frontend**: GitHub Pages (Live) - https://yoseiikegami.github.io/taskflow-app/
+- **Backend**: Railway/Heroku (Planned)
+- **Database**: PlanetScale/MySQL (Planned)
 
 ### Demo Access
 The application is currently running in demo mode with sample data. No authentication is required to test the features.
+
+**🌐 Live Application**: [https://yoseiikegami.github.io/taskflow-app/](https://yoseiikegami.github.io/taskflow-app/)
+
+**📱 Features Available in Demo**:
+- ✅ Create new tasks
+- ✅ Mark tasks as complete/incomplete
+- ✅ Delete tasks
+- ✅ Responsive design (works on mobile and desktop)
+- ✅ Real-time UI updates
+
+## 🔧 Deployment Details
+
+### GitHub Pages Deployment
+- **Automated Deployment**: GitHub Actions workflow triggers on every push to `main` branch
+- **Build Process**: Vite builds the React app with production optimizations
+- **Static Hosting**: Frontend served from GitHub Pages with proper asset paths
+- **Custom Domain Ready**: Configured for potential custom domain setup
+
+### CI/CD Pipeline
+```yaml
+# .github/workflows/deploy.yml
+- Build React application with Vite
+- Add .nojekyll file for proper static hosting
+- Deploy to gh-pages branch using peaceiris/actions-gh-pages
+- Automatic updates on code changes
+```
 
 ## 📄 License
 
@@ -186,4 +213,4 @@ This is a portfolio project, but suggestions and improvements are welcome!
 
 **Built with ❤️ for the global developer community**
 
-**Live Demo**: Coming soon after deployment!
+**Live Demo**: [https://yoseiikegami.github.io/taskflow-app/](https://yoseiikegami.github.io/taskflow-app/) 🚀
