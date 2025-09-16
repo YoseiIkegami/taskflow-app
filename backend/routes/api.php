@@ -38,13 +38,11 @@ Route::get('/test', function () {
 });
 
 // Temporary memory-based tasks API (for demo)
-$tasks = [];
-
-Route::get('/tasks', function () use ($tasks) {
-    return response()->json($tasks);
+Route::get('/tasks', function () {
+    return response()->json([]);
 });
 
-Route::post('/tasks', function () use ($tasks) {
+Route::post('/tasks', function () {
     $task = [
         'id' => uniqid(),
         'title' => request('title'),
@@ -52,7 +50,6 @@ Route::post('/tasks', function () use ($tasks) {
         'completed' => false,
         'created_at' => now()
     ];
-    $tasks[] = $task;
     return response()->json($task, 201);
 });
 
