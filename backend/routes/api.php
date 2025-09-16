@@ -29,6 +29,14 @@ Route::get('/health', function () {
     ]);
 });
 
+// Simple test endpoint
+Route::get('/test', function () {
+    return response()->json([
+        'message' => 'API is working!',
+        'timestamp' => now()
+    ]);
+});
+
 // API version
 Route::get('/version', function () {
     return response()->json([
