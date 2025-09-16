@@ -19,7 +19,12 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => [
+        'https://yoseiikegami.github.io',
+        'http://localhost:5173',
+        'http://localhost:3000',
+        'https://localhost:5173',
+    ],
 
     'allowed_origins_patterns' => [],
 
