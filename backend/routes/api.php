@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,15 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Public routes
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-
 // Health check endpoint for Railway
 Route::get('/health', function () {
     return response()->json([
         'status' => 'ok',
-        'timestamp' => now(),
+        'timestamp' => date('Y-m-d H:i:s'),
         'service' => 'TaskFlow API'
     ]);
 });
@@ -33,22 +27,37 @@ Route::get('/health', function () {
 Route::get('/test', function () {
     return response()->json([
         'message' => 'API is working!',
-        'timestamp' => now()
+        'timestamp' => date('Y-m-d H:i:s')
     ]);
 });
 
-// Temporary memory-based tasks API (for demo)
+// Simple tasks API (for demo)
 Route::get('/tasks', function () {
-    return response()->json([]);
+    return response()->json([
+        [
+            'id' => 1,
+            'title' => 'サンプルタスク1',
+            'description' => 'これはサンプルタスクです',
+            'completed' => false,
+            'created_at' => date('Y-m-d H:i:s')
+        ],
+        [
+            'id' => 2,
+            'title' => 'サンプルタスク2',
+            'description' => 'これもサンプルタスクです',
+            'completed' => true,
+            'created_at' => date('Y-m-d H:i:s')
+        ]
+    ]);
 });
 
-Route::post('/tasks', function () {
+Route::post('/tasks', function (Request $request) {
     $task = [
-        'id' => uniqid(),
-        'title' => request('title'),
-        'description' => request('description'),
+        'id' => rand(1000, 9999),
+        'title' => $request->input('title', '新しいタスク'),
+        'description' => $request->input('description', ''),
         'completed' => false,
-        'created_at' => now()
+        'created_at' => date('Y-m-d H:i:s')
     ];
     return response()->json($task, 201);
 });
@@ -59,15 +68,4 @@ Route::get('/version', function () {
         'version' => '1.0.0',
         'name' => 'TaskFlow API'
     ]);
-});
-
-// Task routes (no authentication required for demo)
-Route::apiResource('tasks', TaskController::class);
-Route::patch('/tasks/{task}/toggle', [TaskController::class, 'toggle']);
-
-// Protected routes (for future use)
-Route::middleware('auth:sanctum')->group(function () {
-    // Auth routes
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/me', [AuthController::class, 'me']);
 });
