@@ -1,0 +1,21 @@
+{
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "cd backend && composer install --no-dev --optimize-autoloader"
+  },
+  "deploy": {
+    "startCommand": "cd backend && php artisan serve --host=0.0.0.0 --port=$PORT",
+    "healthcheckPath": "/api/health"
+  },
+  "environments": {
+    "production": {
+      "variables": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "APP_KEY": "base64:Oyi5UX8Q3TBfJ0sc/DyxzNOnLLb3m9CX5QaIPGD94Gk=",
+        "DB_CONNECTION": "sqlite",
+        "DB_DATABASE": "/app/backend/database/database.sqlite"
+      }
+    }
+  }
+}
