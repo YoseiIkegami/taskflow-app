@@ -5,6 +5,9 @@
 このプロジェクトはタスク管理アプリケーションです。
 開発力の習熟度を確認するために、個人的に作成しました。
 
+<img width="1917" height="959" alt="image" src="https://github.com/user-attachments/assets/21207543-4263-4bb1-baea-1f6c84ef2154" />
+
+
 ---
 
 ## 🌟 特徴
