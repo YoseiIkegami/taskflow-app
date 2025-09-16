@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Public routes
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
 // Health check endpoint for Railway
 Route::get('/health', function () {
     return response()->json([
         'status' => 'ok',
-        'timestamp' => date('Y-m-d H:i:s'),
+        'timestamp' => now(),
         'service' => 'TaskFlow API'
     ]);
 });
@@ -27,40 +33,10 @@ Route::get('/health', function () {
 Route::get('/test', function () {
     return response()->json([
         'message' => 'API is working!',
-        'timestamp' => date('Y-m-d H:i:s')
+        'timestamp' => now()
     ]);
 });
 
-// Simple tasks API (for demo)
-Route::get('/tasks', function () {
-    return response()->json([
-        [
-            'id' => 1,
-            'title' => 'サンプルタスク1',
-            'description' => 'これはサンプルタスクです',
-            'completed' => false,
-            'created_at' => date('Y-m-d H:i:s')
-        ],
-        [
-            'id' => 2,
-            'title' => 'サンプルタスク2',
-            'description' => 'これもサンプルタスクです',
-            'completed' => true,
-            'created_at' => date('Y-m-d H:i:s')
-        ]
-    ]);
-});
-
-Route::post('/tasks', function (Request $request) {
-    $task = [
-        'id' => rand(1000, 9999),
-        'title' => $request->input('title', '新しいタスク'),
-        'description' => $request->input('description', ''),
-        'completed' => false,
-        'created_at' => date('Y-m-d H:i:s')
-    ];
-    return response()->json($task, 201);
-});
 
 // API version
 Route::get('/version', function () {
@@ -68,4 +44,27 @@ Route::get('/version', function () {
         'version' => '1.0.0',
         'name' => 'TaskFlow API'
     ]);
+});
+
+// Simple task routes (no authentication required for demo)
+Route::get('/tasks', function () {
+    return response()->json([]);
+});
+
+Route::post('/tasks', function () {
+    $task = [
+        'id' => uniqid(),
+        'title' => request('title'),
+        'description' => request('description'),
+        'completed' => false,
+        'created_at' => now()
+    ];
+    return response()->json($task, 201);
+});
+
+// Protected routes (for future use)
+Route::middleware('auth:sanctum')->group(function () {
+    // Auth routes
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/me', [AuthController::class, 'me']);
 });
