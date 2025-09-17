@@ -1,32 +1,41 @@
 # TaskFlow - タスク管理アプリ
 
+![TaskFlow Screenshot](https://github.com/user-attachments/assets/21207543-4263-4bb1-baea-1f6c84ef2154)
 
-
-このプロジェクトはタスク管理アプリケーションです。
-開発力の習熟度を確認するために、個人的に作成しました。
-
-<img width="1917" height="959" alt="image" src="https://github.com/user-attachments/assets/21207543-4263-4bb1-baea-1f6c84ef2154" />
-
-
----
+このプロジェクトは、モダンなUI/UXを備えたタスク管理アプリケーションです。
+Apple風のクリーンなデザインと直感的な操作性を重視して開発しました。
 
 ## 🌟 特徴
 
-- **タスク管理**: CRUD操作、完了ステータス切り替え
-- **UI/UX**: クリーンなデザイン、レスポンシブ対応
-- **リアルタイム更新**: タスクの即時同期
-- **デモモード**: 認証不要で試用可能
-
----
+- **📋 タスク管理**: 作成、編集、削除、完了ステータス切り替え
+- **🎨 モダンUI**: Apple風のクリーンなデザイン、レスポンシブ対応
+- **⚡ 高速レスポンス**: リアルタイムなタスク更新
+- **🔓 デモモード**: 認証不要で即座に試用可能
+- **📱 モバイル対応**: スマートフォンでも快適に使用可能
 
 ## 🚀 技術スタック
 
-- **バックエンド**: Laravel 12 + PHP 8.4, Laravel Sanctum, SQLite/MySQL
-- **フロントエンド**: React 18 + JavaScript, Vite, Custom CSS, Axios
+### フロントエンド
+- **React 18** + **Vite** - 高速な開発環境
+- **純粋なCSS** - Apple風のモダンデザイン
+- **Axios** - API通信
+- **React Router** - ページルーティング
 
----
+### バックエンド
+- **Laravel 11** + **PHP 8.3** - 堅牢なAPI
+- **SQLite** - 軽量データベース
+- **Laravel Sanctum** - 認証システム（デモ版では無効）
+
+### デプロイ
+- **フロントエンド**: GitHub Pages
+- **バックエンド**: Railway
 
 ## 🛠️ セットアップ
+
+### 前提条件
+- Node.js 18+
+- PHP 8.3+
+- Composer
 
 ### バックエンド (Laravel)
 ```bash
@@ -35,13 +44,11 @@ composer install
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
-php artisan db:seed # サンプルデータ
 php artisan serve
 ```
 
-フロントエンド (React)
-
-```
+### フロントエンド (React)
+```bash
 cd frontend
 npm install
 npm run dev
@@ -50,21 +57,43 @@ npm run dev
 ### 実行
 両方のサーバーを起動し、ブラウザで http://localhost:5173 にアクセス。
 
-## 🚀 デプロイ
-ライブデモ: https://yoseiikegami.github.io/taskflow-app/
+## 🌐 ライブデモ
 
-フロントエンド: GitHub Pagesに自動デプロイ
+**本番環境で動作中！**
 
-バックエンド: Railway/Heroku にデプロイ予定
+- **フロントエンド**: https://yoseiikegami.github.io/dashboard
+- **バックエンドAPI**: https://taskflow-app-production.up.railway.app/api
+
+## 📱 使用方法
+
+1. **タスクの作成**: 「タスクを追加」ボタンをクリック
+2. **タスクの編集**: タスクをクリックして編集
+3. **完了切り替え**: チェックボックスをクリック
+4. **タスクの削除**: 削除ボタンをクリック
+
+## 🎨 デザインコンセプト
+
+- **Apple風UI**: macOSやiOSを参考にしたクリーンなデザイン
+- **直感的操作**: 最小限のクリックで操作完了
+- **視覚的フィードバック**: アニメーションとホバー効果
+- **アクセシビリティ**: キーボードナビゲーション対応
 
 ## 🔮 今後の予定
-プロジェクト管理、チームコラボレーション機能の追加
 
-期限、優先度などの高度な機能
-
-モバイルアプリ、分析ダッシュボード、多言語対応
+- **📊 プロジェクト管理**: 複数プロジェクト対応
+- **👥 チーム機能**: コラボレーション機能
+- **⏰ 期限管理**: デッドライン設定
+- **📈 分析ダッシュボード**: 生産性分析
+- **🌍 多言語対応**: 国際化対応
 
 ## 📄 ライセンス
+
 MITライセンス
 
-Live Demo: https://yoseiikegami.github.io/taskflow-app/
+## 🤝 コントリビューション
+
+プルリクエストやイシューの報告を歓迎します！
+
+---
+
+**Live Demo**: https://yoseiikegami.github.io/dashboard
