@@ -9,7 +9,10 @@ export const taskService = {
 
   // タスクを作成
   async createTask(taskData) {
+    console.log('Creating task with data:', taskData)
+    console.log('API base URL:', api.defaults.baseURL)
     const response = await api.post('/tasks', taskData)
+    console.log('Task created successfully:', response.data)
     return response.data
   },
 
