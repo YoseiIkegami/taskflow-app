@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API_BASE_URL = import.meta.env.PROD 
-  ? 'https://taskflow-api-production.up.railway.app/api'  // 本番環境用（後で設定）
+  ? 'https://taskflow-app-production.up.railway.app/api'  // 本番環境用
   : 'http://localhost:8000/api'  // 開発環境用
 
 const api = axios.create({
