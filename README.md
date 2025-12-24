@@ -3,14 +3,7 @@
 ![TaskFlow Screenshot](https://github.com/user-attachments/assets/21207543-4263-4bb1-baea-1f6c84ef2154)
 
 このプロジェクトは、モダンなUI/UXを備えたタスク管理アプリケーションです。
-クリーンなデザインと直感的な操作性を重視して開発しました。
-
-## 🌟 特徴
-
-- **📋 タスク管理**: 作成、編集、削除、完了ステータス切り替え
-- **🎨 モダンUI**: クリーンなデザイン、レスポンシブ対応
-- **⚡ 高速レスポンス**: リアルタイムなタスク更新
-- **🔓 デモモード**: 認証不要で即座に試用可能
+デザインと直感的な操作性を重視してWebアプリケーションの学習目的で開発しました。
 
 ## 🚀 技術スタック
 
@@ -21,9 +14,9 @@
 - **React Router** - ページルーティング
 
 ### バックエンド
-- **Laravel 11** + **PHP 8.3** - 堅牢なAPI
-- **SQLite** - 軽量データベース
-- **Laravel Sanctum** - 認証システム（デモ版では無効）
+- **Laravel 11** + **PHP 8.3**
+- **SQLite**
+- **Laravel Sanctum** - 認証システム
 
 ### デプロイ
 - **フロントエンド**: GitHub Pages
@@ -58,10 +51,8 @@ npm run dev
 
 ## 🌐 ライブデモ
 
-**本番環境で動作中！**
+**Live Demo**: https://yoseiikegami.github.io/dashboard
 
-- **フロントエンド**: https://yoseiikegami.github.io/dashboard
-- **バックエンドAPI**: https://taskflow-app-production.up.railway.app/api
 
 ## 📱 使用方法
 
@@ -87,5 +78,3 @@ MITライセンス
 プルリクエストやイシューの報告を歓迎します！
 
 ---
-
-**Live Demo**: https://yoseiikegami.github.io/dashboard
