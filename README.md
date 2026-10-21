@@ -14,7 +14,7 @@
 - **React Router** - ページルーティング
 
 ### バックエンド
-- **Laravel 11** + **PHP 8.3**
+- **Laravel 12** + **PHP 8.2.35 / 8.3.36 / 8.4.27 / 8.5.12 以降の各系列の修正版**
 - **SQLite**
 - **Laravel Sanctum** - 認証システム
 
@@ -26,7 +26,7 @@
 
 ### 前提条件
 - Node.js 18+
-- PHP 8.3+
+- PHP 8.2.35+、8.3.36+、8.4.27+、8.5.12+（各系列内）
 - Composer
 
 ### バックエンド (Laravel)
@@ -38,6 +38,11 @@ php artisan key:generate
 php artisan migrate
 php artisan serve
 ```
+
+PHP本体は、CVE-2026-109618 / CVE-2026-109619の修正版が必要です。
+`composer install` はPHP本体を更新しません。Railwayで再公開する前に、
+修正版を含む環境で新しくビルドし、実行環境の `php -v` を確認してください。
+既存イメージの再起動だけでは修正は反映されません。
 
 ### フロントエンド (React)
 ```bash
